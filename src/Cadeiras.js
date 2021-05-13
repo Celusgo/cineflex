@@ -9,29 +9,38 @@ export default function Cadeiras({cadeira}){
 	useEffect(() => {
 		const assentos = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/showtimes/${cadeira}/seats`);
 		assentos.then(resposta =>{
-        console.log(resposta.data);
+        //console.log(resposta.data);
         setInformacoes(resposta.data);
     });
 	}, []);
 
     const { movie = [], day = [], seats = [] } = informacoes;
-    console.log(seats);
+    //console.log(seats);
 
     let situacao = [];
+    let escolhidos = [];
+    let filtro;
     
     for(let i =0; i < seats.length; i++){
         situacao.push(seats[i].isAvailable)
     }
 
-    console.log(situacao);
     
     function teste(e){
         if(situacao[e]===true){
-            alert("Olá")
-            situacao[e] = 'selecionado'
-            console.log(situacao);
-        }else if(situacao[e]===false){
-            alert("Tchau")
+            situacao[e] = "selecionado";
+            escolhidos.push(seats[e].id);
+            escolhidos = [...new Set(escolhidos)];
+            console.log(escolhidos);
+            //console.log(situacao);
+        }else if(situacao[e]==="selecionado"){
+            escolhidos = escolhidos.filter((n)=> n !== seats[e].id)
+            situacao[e] = true;
+            //console.log(situacao);
+            console.log(escolhidos);
+        }
+        else if(situacao[e]===false){
+            alert("Este assento já foi escolhido por outra pessoa!")
         }
     }
 

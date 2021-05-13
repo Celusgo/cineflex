@@ -190,3 +190,19 @@
     color:#293845;
     margin-top:55px;
 }
+
+.verde{
+    background-color:#8dd7cf;
+    border:1px solid #45bdb0;
+    width:26px;
+    height:25px;
+    border-radius:12px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Roboto';
+    font-weight:400;
+    font-size:11px;
+    color:#000000;
+    margin:3px;
+}
