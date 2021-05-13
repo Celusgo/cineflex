@@ -1,0 +1,192 @@
+*{
+    box-sizing: border-box;
+}
+
+.topo{
+    background-color: #c3cfd9;
+    width:375px;
+    height:67px;
+    position:fixed;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:fixed;
+    top:0;
+    left:0;
+}
+
+.topo h1{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight:400;
+    font-size: 34px;
+    color:#e8833a;
+}
+
+.select{
+    margin-top:55px;
+    width:375px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:40px;
+}
+
+.select h1{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight:400;
+    font-size: 24px;
+    color:#293845;
+    margin-top:55px;
+}
+
+.filme{
+    width:145px;
+    height:209px;
+    background-color:#FFFFFF;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    margin-bottom:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filme img{
+    width:129px;
+    height:193px;
+}
+
+.catalogo{
+    width:375px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding:0px 15px;
+}
+
+.hora-sessao{
+    padding-left:20px;
+}
+
+.container-sessao{
+    margin-bottom:120px;
+}
+
+.hora-sessao p{
+    font-family: 'Roboto';
+    font-weight: 400;
+    color:#293845;
+    font-size:20px;
+}
+
+.botao-horario{
+    border-radius:3px;
+    width:83px;
+    height:43px;
+    background-color:#e8833a;
+    font-family: 'Roboto';
+    font-size:18px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    color:#ffffff;
+    margin-right:8px;
+}
+
+.container-horarios{
+    display:flex;
+    margin:23px 0px;
+}
+
+.resumo-inferior{
+    display:flex;
+    position:fixed;
+    bottom:0;
+    left:0;
+    background-color:#DFE6ED;
+    width:375px;
+    height:117px;
+    align-items: center;
+    padding:15px;
+}
+
+.moldura-inferior{
+    display:flex;
+    width:64px;
+    height:89px;
+    background-color:white;
+    justify-content: center;
+    align-items: center;
+}
+
+.moldura-inferior img{
+    width:48px;
+    height:72px;
+}
+
+.resumo-inferior h1{
+    font-family:'Roboto';
+    font-weight:'400';
+    font-size:26px;
+    color:#293845;
+    margin-left:14px;
+}
+
+.container-assentos{  
+        display: flex;
+        flex-wrap: wrap;
+        padding: 24px;
+        align-items: center;
+        justify-content: space-around;
+}
+
+.cinza{
+    background-color:#c3cfd9;
+    border:1px solid #808f9d;
+    width:26px;
+    height:25px;
+    border-radius:12px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Roboto';
+    font-weight:400;
+    font-size:11px;
+    color:#000000;
+    margin:3px;
+}
+
+.amarelo{
+    background-color:#fbe192;
+    border:1px solid #f7c52b;
+    width:26px;
+    height:25px;
+    border-radius:12px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Roboto';
+    font-weight:400;
+    font-size:11px;
+    color:#000000;
+    margin:3px;
+}
+
+.select-seats{
+    margin-top:55px;
+    width:375px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.select-seats h1{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight:400;
+    font-size: 24px;
+    color:#293845;
+    margin-top:55px;
+}
