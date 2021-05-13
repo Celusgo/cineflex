@@ -206,3 +206,126 @@
     color:#000000;
     margin:3px;
 }
+
+.legenda{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.legenda-selecionado{
+    background-color: #8DD7CF;
+    border: 1px solid #1AAE9E;
+    height:25px;
+    width:25px;
+    border-radius:17px;
+    margin-bottom:10px;
+}
+
+.legenda-disponivel{
+    background-color: #C3CFD9;
+    border: 1px solid #7B8B99;
+    height:25px;
+    width:25px;
+    border-radius:17px;
+    margin-bottom:10px;
+}
+
+.legenda-indisponivel{
+    background-color: #FBE192;
+    border: 1px solid #F7C52B;
+    height:25px;
+    width:25px;
+    border-radius:17px;
+    margin-bottom:10px;
+}
+
+.legenda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    width:90px;
+}
+
+.container-legenda{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.legenda h1{
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size:13px;
+    color:#4e5a65;
+}
+
+.dados-comprador{
+    padding:0px 24px;
+    margin-top:41px;
+}
+
+.dados-comprador h1{
+    font-family: 'Roboto';
+    font-size:18px;
+    font-weight: 400;
+    color:#293845;
+}
+
+.dados-comprador input{
+    width: 327px;
+    height: 51px;
+    padding: 18px;
+    margin-bottom: 10px;
+    border: 1px solid #D5D5D5;
+    border-radius: 3px;
+    font-family: 'Roboto';
+    font-size: 18px;
+    color: #293845;
+}
+
+.dados-comprador input::-webkit-input-placeholder{ 
+    color: #AFAFAF; 
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-style: italic;
+}
+
+.dados-comprador  input:-moz-placeholder{ 
+    color: #AFAFAF; 
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-style: italic;
+}
+
+.dados-comprador input::-moz-placeholder{ 
+    color: #AFAFAF; 
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-style: italic;
+}
+
+.moldura-inferior-cadeiras{
+    display:flex;
+    width:64px;
+    height:89px;
+    background-color:white;
+    justify-content: center;
+    align-items: center;
+}
+
+.moldura-inferior-cadeiras img{
+    width:48px;
+    height:72px;
+}
+
+.resumo-inferior-cadeiras h1{
+    font-family:'Roboto';
+    font-weight:'400';
+    font-size:26px;
+    color:#293845;
+    margin-left:14px;
+}
+

@@ -13,7 +13,7 @@ function App() {
     const [cadeira, setCadeira] = React.useState("");
     const [filme, setFilme] = React.useState("");
     const [data, setData] = React.useState("");
-    const [assento, setAssento] = React.useState("");
+    const [assento, setAssento] = React.useState([]);
     const [nome, setNome] = React.useState("");
     const [cpf, setCpf] = React.useState("");
     //console.log(id);
@@ -35,7 +35,7 @@ function App() {
                         <Sessao id={id} setData = {setData} setCadeira = {setCadeira}/>
                     </Route>
                     <Route path = "/assentos/:idSessao" exact>
-                      <Cadeiras cadeira = {cadeira} id={id} assento = {assento} setAssento = {setAssento}/>
+                      <Cadeiras cadeira = {cadeira} id={id} assento = {assento} setAssento = {setAssento} nome = {nome} setNome = {setNome} cpf = {cpf} setCpf = {setCpf}/>
                     </Route>
                 </Switch>  
             </BrowserRouter>
