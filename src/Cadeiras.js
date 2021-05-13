@@ -2,24 +2,21 @@ import { Link } from "react-router-dom";
 import { useState, useEffect} from 'react';
 import axios from 'axios';
 
-export default function Cadeiras({cadeira}){
+export default function Cadeiras({cadeira, setAssento}){
 
     const [informacoes, setInformacoes] = useState([]);
 
 	useEffect(() => {
 		const assentos = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/showtimes/${cadeira}/seats`);
 		assentos.then(resposta =>{
-        //console.log(resposta.data);
         setInformacoes(resposta.data);
     });
 	}, []);
 
     const { movie = [], day = [], seats = [] } = informacoes;
-    //console.log(seats);
 
     let situacao = [];
     let escolhidos = [];
-    let filtro;
     
     for(let i =0; i < seats.length; i++){
         situacao.push(seats[i].isAvailable)
@@ -32,11 +29,11 @@ export default function Cadeiras({cadeira}){
             escolhidos.push(seats[e].id);
             escolhidos = [...new Set(escolhidos)];
             console.log(escolhidos);
-            //console.log(situacao);
+            console.log(situacao);
         }else if(situacao[e]==="selecionado"){
             escolhidos = escolhidos.filter((n)=> n !== seats[e].id)
             situacao[e] = true;
-            //console.log(situacao);
+            console.log(situacao);
             console.log(escolhidos);
         }
         else if(situacao[e]===false){
