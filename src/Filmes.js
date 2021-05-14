@@ -10,7 +10,6 @@ export default function Filmes({setId, setFilme}){
 
         requisicao.then(response => {
             setFilmes(response.data);
-            console.log([response.data]);
         });
     }, []);
 

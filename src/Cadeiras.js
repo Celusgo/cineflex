@@ -56,7 +56,7 @@ export default function Cadeiras({cadeira, assento, setAssento, nome, setNome, c
                 <h1>Nome do comprador:</h1>
                 <input placeholder = {"Digite seu nome..."} value = {nome} onChange={e => setNome(e.target.value)}></input>
                 <h1>CPF do comprador:</h1>
-                <input placeholder = {"Digite seu CPF..."} value = {cpf} onChange={e => setCpf(e.target.value)}></input>
+                <input placeholder = {"Digite seu CPF (somente números)"} value = {cpf} onChange={e => setCpf(e.target.value)}></input>
             </div>
 
            <div className="container-confirmacao">

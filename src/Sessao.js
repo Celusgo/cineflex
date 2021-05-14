@@ -16,8 +16,6 @@ export default function Sessao({id, setCadeira, setData, setHora}){
     }, []);
 
     const { days = [] } = horarios;
-    console.log(days);
-
 
     return(
         <>

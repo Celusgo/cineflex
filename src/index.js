@@ -19,14 +19,6 @@ function App() {
     const [nome, setNome] = React.useState("");
     const [cpf, setCpf] = React.useState("");
     
-    console.log(filme);
-    console.log(data);
-    console.log(hora);
-    console.log(assento);
-    console.log(nome);
-    console.log(cpf);
-
-
 
     return (
         <>
