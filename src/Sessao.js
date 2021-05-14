@@ -3,7 +3,7 @@ import axios from 'axios';
 import CadaSessao from './CadaSessao';
 
 
-export default function Sessao({id, setCadeira, setData}){
+export default function Sessao({id, setCadeira, setData, setHora}){
     
     const [horarios, setHorarios] = useState([]);
 
@@ -26,7 +26,7 @@ export default function Sessao({id, setCadeira, setData}){
             </div>
             <div className="container-sessao">
             {days.map((item, i) => 
-            <CadaSessao setCadeira = {setCadeira} setData = {setData} key = {i} weekday = {item.weekday} date = {item.date} showtimes = {item.showtimes}/>
+            <CadaSessao setCadeira = {setCadeira} setData = {setData} setHora = {setHora} key = {i} weekday = {item.weekday} date = {item.date} showtimes = {item.showtimes}/>
             )}
             </div>
             <div className="resumo-inferior">

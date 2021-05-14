@@ -3,8 +3,6 @@ import { useState, useEffect} from 'react';
 import axios from 'axios';
 
 export default function Cadeiras({cadeira, assento, setAssento, nome, setNome, cpf, setCpf}){
-    console.log(nome);
-    console.log(cpf);
     const [informacoes, setInformacoes] = useState([]);
 
 	useEffect(() => {
@@ -15,41 +13,12 @@ export default function Cadeiras({cadeira, assento, setAssento, nome, setNome, c
 	}, []);
 
     const { movie = [], day = [], seats = [] } = informacoes;
-
-    let situacao = [];
-    let escolhidos = [];
-    
-    for(let i =0; i < seats.length; i++){
-        situacao.push(seats[i].isAvailable)
-    }
-
-    
-
-    function teste(e){
-        if(situacao[e]===true){
-            situacao[e] = "selecionado";
-            setAssento(assento => [...assento, seats[e].id]);
-            console.log(assento);
-            console.log(situacao);
-        }else if(situacao[e]==="selecionado"){
-            setAssento(assento.filter((n)=> n !== seats[e].id))
-            situacao[e] = true;
-            console.log(assento);
-            console.log(escolhidos);
-        }
-        else if(situacao[e]===false){
-            alert("Este assento já foi escolhido por outra pessoa!")
-        }
-    }
+   
 
     const enviarDados = {
-        ids: [1,2,3],
+        ids: assento.map(elemento => elemento.id),
         name: nome,
         cpf: cpf
-    }
-
-    function logar(){
-        console.log(enviarDados);
     }
 
     return(
@@ -59,10 +28,9 @@ export default function Cadeiras({cadeira, assento, setAssento, nome, setNome, c
             </div>
             <div className ="container-assentos">
                 {seats.map((lugar, i)=>
-                <div onClick = {()=> teste(i)} key = {i} className={situacao[i] === true?"cinza":"amarelo"}>
-                    {lugar.name}
-                </div>
-                )}
+                    <div key = {i} onClick={() => lugar.isAvailable? (assento.find(n => n.id == lugar.id)? (setAssento(assento.filter(n => n.id !== lugar.id))): setAssento([...assento, {id: lugar.id, name: lugar.name}])) : alert("Esse assento não está disponível")} className = {lugar.isAvailable? (assento.find(n => n.id == lugar.id) ? "verde": "cinza"): "amarelo"}>
+                        {lugar.name}
+                    </div>)}
             </div>
 
             <div className="container-legenda">
@@ -88,8 +56,8 @@ export default function Cadeiras({cadeira, assento, setAssento, nome, setNome, c
             </div>
 
            <div className="container-confirmacao">
-                <Link to="/success">
-                    <div className = "botao-confirmacao" onClick={logar}>
+                <Link to="/sucesso">
+                    <div className = "botao-confirmacao" onClick={axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/seats/book-many`, enviarDados)}>
                         Reservar assento(s)
                     </div>
                 </Link>

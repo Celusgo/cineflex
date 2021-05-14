@@ -351,3 +351,39 @@
     display:flex;
     justify-content: center;
 }
+
+.sucesso{
+    display: flex;
+    width:374px;
+    height:110px;
+    margin-top:68px;
+    font-family:'Roboto';
+    font-weight: 700;
+    font-size:24px;
+    color: #247a6b;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-sucesso{
+    padding:0px 20px;
+}
+
+.info-sucesso{
+    margin-bottom: 30px;
+}
+
+.info-sucesso h1{
+    font-family:'Roboto';
+    font-weight: 700;
+    font-size:24px;
+    color:#293845;
+    margin-bottom:10px;
+}
+
+.info-sucesso h2{
+    font-family:'Roboto';
+    font-weight: 400;
+    font-size:22px;
+    color:#293845;
+}
