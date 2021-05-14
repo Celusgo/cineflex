@@ -15,7 +15,7 @@ export default function Sucesso({ setId, setCadeira, filme, setFilme, hora, setH
             <div className="info-sucesso">
                 <h1>Ingressos</h1>
                 {assento.map((elemento)=>
-                <h2>Assento {elemento.id}</h2>
+                <h2>Assento {elemento.name}</h2>
                 )}
             </div>
             <div className="info-sucesso">

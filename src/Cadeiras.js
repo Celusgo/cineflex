@@ -25,6 +25,8 @@ export default function Cadeiras({cadeira, assento, setAssento, nome, setNome, c
         axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/seats/book-many`, enviarDados)
     }
 
+    console.log(assento);
+
     return(
         <>
             <div className="select-seats">
@@ -69,7 +71,7 @@ export default function Cadeiras({cadeira, assento, setAssento, nome, setNome, c
 
             <div className="resumo-inferior">
                 <div className="moldura-inferior-cadeiras">
-                    <img src={movie.posterURL}/>
+                    <img src={movie.posterURL} alt = {movie.title}/>
                 </div>
                 
                 <div class="resumo-pedido">
