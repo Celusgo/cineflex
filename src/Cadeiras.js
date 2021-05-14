@@ -20,6 +20,10 @@ export default function Cadeiras({cadeira, assento, setAssento, nome, setNome, c
         name: nome,
         cpf: cpf
     }
+    
+    function enviaDados(){
+        axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/seats/book-many`, enviarDados)
+    }
 
     return(
         <>
@@ -28,7 +32,7 @@ export default function Cadeiras({cadeira, assento, setAssento, nome, setNome, c
             </div>
             <div className ="container-assentos">
                 {seats.map((lugar, i)=>
-                    <div key = {i} onClick={() => lugar.isAvailable? (assento.find(n => n.id == lugar.id)? (setAssento(assento.filter(n => n.id !== lugar.id))): setAssento([...assento, {id: lugar.id, name: lugar.name}])) : alert("Esse assento não está disponível")} className = {lugar.isAvailable? (assento.find(n => n.id == lugar.id) ? "verde": "cinza"): "amarelo"}>
+                    <div key = {i} onClick={() => lugar.isAvailable? (assento.find(n => n.id === lugar.id)? (setAssento(assento.filter(n => n.id !== lugar.id))): setAssento([...assento, {id: lugar.id, name: lugar.name}])) : alert("Esse assento não está disponível")} className = {lugar.isAvailable? (assento.find(n => n.id === lugar.id) ? "verde": "cinza"): "amarelo"}>
                         {lugar.name}
                     </div>)}
             </div>
@@ -57,7 +61,7 @@ export default function Cadeiras({cadeira, assento, setAssento, nome, setNome, c
 
            <div className="container-confirmacao">
                 <Link to="/sucesso">
-                    <div className = "botao-confirmacao" onClick={axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/seats/book-many`, enviarDados)}>
+                    <div className = "botao-confirmacao" onClick={()=>enviaDados()}>
                         Reservar assento(s)
                     </div>
                 </Link>
