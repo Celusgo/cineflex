@@ -15,7 +15,6 @@ export default function Cadeiras({cadeira, assento, setAssento, nome, setNome, c
 	}, []);
 
     const { movie = [], day = [], seats = [] } = informacoes;
-    console.log(informacoes)
 
     let situacao = [];
     let escolhidos = [];
@@ -43,15 +42,25 @@ export default function Cadeiras({cadeira, assento, setAssento, nome, setNome, c
         }
     }
 
+    const enviarDados = {
+        ids: [1,2,3],
+        name: nome,
+        cpf: cpf
+    }
+
+    function logar(){
+        console.log(enviarDados);
+    }
+
     return(
         <>
             <div className="select-seats">
                 <h1>Selecione os assentos</h1>
             </div>
             <div className ="container-assentos">
-                {seats.map((seat, i)=>
+                {seats.map((lugar, i)=>
                 <div onClick = {()=> teste(i)} key = {i} className={situacao[i] === true?"cinza":"amarelo"}>
-                    {seat.name}
+                    {lugar.name}
                 </div>
                 )}
             </div>
@@ -76,6 +85,14 @@ export default function Cadeiras({cadeira, assento, setAssento, nome, setNome, c
                 <input placeholder = {"Digite seu nome..."} value = {nome} onChange={e => setNome(e.target.value)}></input>
                 <h1>CPF do comprador:</h1>
                 <input placeholder = {"Digite seu CPF..."} value = {cpf} onChange={e => setCpf(e.target.value)}></input>
+            </div>
+
+           <div className="container-confirmacao">
+                <Link to="/success">
+                    <div className = "botao-confirmacao" onClick={logar}>
+                        Reservar assento(s)
+                    </div>
+                </Link>
             </div>
 
             <div className="resumo-inferior">

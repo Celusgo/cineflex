@@ -136,6 +136,7 @@
 
 .container-assentos{  
         display: flex;
+        width:375px;
         flex-wrap: wrap;
         padding: 24px;
         align-items: center;
@@ -253,6 +254,7 @@
     display:flex;
     align-items: center;
     justify-content: center;
+    width:375px;
 }
 
 .legenda h1{
@@ -329,3 +331,23 @@
     margin-left:14px;
 }
 
+.botao-confirmacao{
+    display: flex;
+    width: 225px;
+    height: 42px;
+    background-color:#e8833a;
+    border-radius:3px;
+    align-items: center;
+    justify-content: center;
+    font-family:'Roboto';
+    font-size:18px;
+    color:#ffffff;
+}
+
+.container-confirmacao{
+    margin-bottom: 140px;
+    margin-top:57px;
+    width:374px;
+    display:flex;
+    justify-content: center;
+}
