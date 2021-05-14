@@ -25,8 +25,6 @@ export default function Cadeiras({cadeira, assento, setAssento, nome, setNome, c
         axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/seats/book-many`, enviarDados)
     }
 
-    console.log(assento);
-
     return(
         <>
             <div className="select-seats">
